@@ -5,5 +5,5 @@ if ! [ -z "$1" ]; then
 fi
 
 rm -Rf /root/build/out/$target-git
-/root/build/package-release.sh git /root/build/out --no-package
+/root/build/package-release.sh git /root/build/out --no-package ${@:2}
 chown -R $UID:$GID /root/build/out/$target-git
