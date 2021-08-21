@@ -3,3 +3,4 @@ vkd3d-proton/
 dxvk-ags/
 dxvk-nvapi/
 out/**
+*.log
