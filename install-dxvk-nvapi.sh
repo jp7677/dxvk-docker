@@ -1,11 +1,6 @@
 #!/bin/sh
+rm --force ~/.steam/steam/steamapps/common/Proton\ 6.3/dist/lib/wine/nvapi/nvapi.dll
+rm --force ~/.steam/steam/steamapps/common/Proton\ 6.3/dist/lib64/wine/nvapi/nvapi64.dll
 
-if [ -z "$WINEPREFIX" ]; then 
-    echo "WINEPREFIX not set"
-    exit 1
-fi
-
-set -e
-
-cp --verbose out/dxvk-nvapi-git/x64/nvapi64.dll "$WINEPREFIX/drive_c/windows/system32"
-cp --verbose out/dxvk-nvapi-git/x32/nvapi.dll "$WINEPREFIX/drive_c/windows/syswow64"
+cp --verbose out/dxvk-nvapi-git/x32/nvapi.dll ~/.steam/steam/steamapps/common/Proton\ 6.3/dist/lib/wine/nvapi/
+cp --verbose out/dxvk-nvapi-git/x64/nvapi64.dll ~/.steam/steam/steamapps/common/Proton\ 6.3/dist/lib64/wine/nvapi/
