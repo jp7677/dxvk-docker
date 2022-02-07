@@ -1,4 +1,4 @@
-FROM archlinux/base:latest
+FROM archlinux:base
 
 RUN echo -e '[ownstuff]\nServer = https://ftp.f3l.de/~martchus/$repo/os/$arch\nSigLevel = Never' >> /etc/pacman.conf
 RUN pacman --noconfirm -Syuu
