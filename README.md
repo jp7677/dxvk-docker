@@ -2,7 +2,7 @@
 
 This is a fork of [https://github.com/cheald/dxvk-docker](https://github.com/cheald/dxvk-docker).
 
-Provides a Dockerfile which provides a full build environment for [DXVK](https://github.com/doitsujin/dxvk), [VKD3D-Proton](https://github.com/HansKristian-Work/vkd3d-proton) and friends using docker or podman including scripts to install into Proton 6.3.
+Provides a Dockerfile which provides a full build environment for [DXVK](https://github.com/doitsujin/dxvk), [VKD3D-Proton](https://github.com/HansKristian-Work/vkd3d-proton) and friends using docker or podman including scripts to install into Proton 7.0.
 
 - Run `./setup-dxvk-docker.sh` to setup/refresh the build image.
 - Clone DXVK and/or friends into the root folder of this project.
