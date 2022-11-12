@@ -1,6 +1,5 @@
 FROM archlinux:base-devel
 
-RUN pacman -Sy --noconfirm archlinux-keyring
 RUN pacman -Syu --needed --noconfirm git gcc mingw-w64-gcc meson ninja glslang
 
 RUN useradd -m pkg && \
