@@ -1,10 +1,18 @@
-FROM archlinux:base
+FROM archlinux:base-devel
 
-RUN echo -e '[ownstuff]\nServer = https://ftp.f3l.de/~martchus/$repo/os/$arch\nSigLevel = Never' >> /etc/pacman.conf
 RUN pacman -Sy --noconfirm archlinux-keyring
 RUN pacman --noconfirm -Syuu
-RUN pacman --noconfirm -S git gcc mingw-w64-gcc mingw-w64-tools meson ninja glslang
+RUN pacman -Syu --needed --noconfirm git gcc mingw-w64-gcc meson ninja glslang
 
+RUN useradd -m pkg && \
+    echo "pkg ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/build
+
+USER pkg
+WORKDIR --chown=pkg:pkg /tmp/mingw-w64-tools
+RUN git clone https://aur.archlinux.org/mingw-w64-tools.git . && \
+    makepkg --noconfirm --syncdeps --rmdeps --install --clean --skippgpcheck
+
+USER root
 WORKDIR /root/build
 ADD build.sh /root/build.sh
 CMD [ "/root/build.sh" ]
