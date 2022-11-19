@@ -6,7 +6,8 @@ RUN useradd -m pkg && \
     echo "pkg ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/build
 
 USER pkg
-WORKDIR --chown=pkg:pkg /tmp/mingw-w64-tools
+RUN mkdir /tmp/mingw-w64-tools
+WORKDIR /tmp/mingw-w64-tools
 RUN git clone https://aur.archlinux.org/mingw-w64-tools.git . && \
     makepkg --noconfirm --syncdeps --rmdeps --install --clean --skippgpcheck
 
