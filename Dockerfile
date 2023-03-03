@@ -1,5 +1,7 @@
 FROM archlinux:base
 
+RUN pacman -Sy --needed --noconfirm archlinux-keyring
+RUN pacman-key --init && pacman-key --populate archlinux
 RUN pacman -Syu --needed --noconfirm git gcc mingw-w64-gcc meson ninja glslang
 
 RUN curl -L https://archlinux.org/packages/multilib/x86_64/wine/download/ -o wine-latest.pkg.tar.zst && \
