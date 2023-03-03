@@ -4,6 +4,6 @@ if [ -x "$(command -v podman)" ]; then
     alias docker=podman
 fi
 
-docker pull archlinux:base-devel
+docker pull archlinux:base
 docker rmi dxvk-docker:latest 2> /dev/null
 docker build . -t dxvk-docker:latest
