@@ -4,6 +4,7 @@ if [ -z "$1" ]; then
   FILTER="[@all]"
 fi
 
+DXVK_ENABLE_NVAPI=1 \
 DXVK_LOG_LEVEL=none \
 DXVK_NVAPI_LOG_LEVEL=none \
 WINEDEBUG=-all \
