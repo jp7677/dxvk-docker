@@ -91,11 +91,10 @@ installFile() {
       else
         rm -v "${dstfile}"
       fi
-      $file_cmd "${srcfile}" "${dstfile}"
     else
-      echo "${dstfile}: File not found in wine prefix" >&2
-      return 1
+      echo "${dstfile}: File not found in wine prefix, copying anyway" >&2
     fi
+    $file_cmd "${srcfile}" "${dstfile}"
   fi
   return 0
 }
