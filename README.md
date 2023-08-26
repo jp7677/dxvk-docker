@@ -13,4 +13,6 @@ Provides a Dockerfile which provides a full build environment for [DXVK](https:/
 
 The build results can be found in `out`.
 
+Those scripts are extended/written with my own setup and workflow in mind. Please don't trust those scripts blindly and review them before running. Usage is on you own risk.
+
 Thanks a lot to the original authors!
