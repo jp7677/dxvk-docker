@@ -117,6 +117,7 @@ install() {
 }
 
 install dxgi out/dxvk-git
+install d3d8 out/dxvk-git
 install d3d9 out/dxvk-git
 install d3d10core out/dxvk-git
 install d3d11 out/dxvk-git
