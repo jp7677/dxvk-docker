@@ -7,7 +7,7 @@ if [ -e ~/.steam/steam/steamapps/common/Proton\ -\ Experimental ]; then
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/dxvk/d3d8.dll
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/dxvk/d3d9.dll
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/dxvk/d3d10core.dll
-        rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/dxvk/d3d11dll
+        rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/dxvk/d3d11.dll
 
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib/wine/dxvk/dxgi.dll
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib/wine/dxvk/d3d8.dll
