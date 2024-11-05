@@ -123,6 +123,7 @@ install d3d10core out/dxvk-git
 install d3d11 out/dxvk-git
 
 install nvapi64 out/dxvk-nvapi-git
+install nvofapi64 out/dxvk-nvapi-git
 
 dxvk_lib32="x86"
 install d3d12core out/vkd3d-proton-git

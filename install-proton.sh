@@ -30,9 +30,11 @@ if [ -e ~/.steam/steam/steamapps/common/Proton\ -\ Experimental ]; then
 
     if [ -e out/dxvk-nvapi-git ]; then
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/nvapi/nvapi64.dll
+        rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/nvapi/nvofapi64.dll
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib/wine/nvapi/nvapi.dll
 
         cp --verbose out/dxvk-nvapi-git/x64/nvapi64.dll ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/nvapi/
+        cp --verbose out/dxvk-nvapi-git/x64/nvofapi64.dll ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/nvapi/
         cp --verbose out/dxvk-nvapi-git/x32/nvapi.dll ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib/wine/nvapi/
     fi
 
