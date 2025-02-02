@@ -33,9 +33,16 @@ if [ -e ~/.steam/steam/steamapps/common/Proton\ -\ Experimental ]; then
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/nvapi/nvofapi64.dll
         rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib/wine/nvapi/nvapi.dll
 
+        rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/share/dxvk_nvapi_vkreflex_layer/VkLayer_DXVK_NVAPI_reflex.json
+        rm --force ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/share/dxvk_nvapi_vkreflex_layer/libdxvk_nvapi_vkreflex_layer.so
+
         cp --verbose out/dxvk-nvapi-git/x64/nvapi64.dll ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/nvapi/
         cp --verbose out/dxvk-nvapi-git/x64/nvofapi64.dll ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib64/wine/nvapi/
         cp --verbose out/dxvk-nvapi-git/x32/nvapi.dll ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/lib/wine/nvapi/
+
+        mkdir -p ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/share/dxvk_nvapi_vkreflex_layer/
+        cp --verbose out/dxvk-nvapi-git/layer/VkLayer_DXVK_NVAPI_reflex.json ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/share/dxvk_nvapi_vkreflex_layer/
+        cp --verbose out/dxvk-nvapi-git/layer/libdxvk_nvapi_vkreflex_layer.so ~/.steam/steam/steamapps/common/Proton\ -\ Experimental/files/share/dxvk_nvapi_vkreflex_layer/
     fi
 
     if [ -e out/vkd3d-proton-git ]; then
