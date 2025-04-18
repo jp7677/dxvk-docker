@@ -51,7 +51,7 @@ $wineboot -u
 win64_sys_path=$($wine64 winepath -u 'C:\windows\system32' 2> /dev/null)
 win64_sys_path="${win64_sys_path/$'\r'/}"
 if $wow64; then
-  win32_sys_path=$($wine winepath -u 'C:\windows\system32' 2> /dev/null)
+  win32_sys_path=$($wine winepath -u 'C:\windows\syswow64' 2> /dev/null)
   win32_sys_path="${win32_sys_path/$'\r'/}"
 fi
 
