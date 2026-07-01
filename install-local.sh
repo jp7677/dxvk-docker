@@ -23,19 +23,8 @@ export WINEDEBUG=-all
 export WINEDLLOVERRIDES="mscoree,mshtml="
 
 wine="wine"
-wine64="wine64"
 wineboot="wineboot"
-
-# $PATH is the way for user to control where wine is located (including custom Wine versions).
-# Pure 64-bit Wine (non Wow64) requries skipping 32-bit steps.
-# In such case, wine64 and winebooot will be present, but wine binary will be missing,
-# however it can be present in other PATHs, so it shouldn't be used, to avoid versions mixing.
-wine_path=$(dirname "$(which $wineboot)")
 wow64=true
-if ! [ -f "$wine_path/$wine" ]; then
-   wine=$wine64
-   wow64=false
-fi
 
 # resolve 32-bit and 64-bit system32 path
 winever=$($wine --version | grep wine)
@@ -48,7 +37,7 @@ fi
 # if they are missing
 $wineboot -u
 
-win64_sys_path=$($wine64 winepath -u 'C:\windows\system32' 2> /dev/null)
+win64_sys_path=$($wine winepath -u 'C:\windows\system32' 2> /dev/null)
 win64_sys_path="${win64_sys_path/$'\r'/}"
 if $wow64; then
   win32_sys_path=$($wine winepath -u 'C:\windows\syswow64' 2> /dev/null)
